@@ -1,7 +1,5 @@
 import { numbers, h2, guessesleft, popup, random } from "./globals.js";
 
-window.onload;
-
 for (let i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", numberEqual);
 }
@@ -24,7 +22,6 @@ function numberEqual(e) {
       numbers[i].removeEventListener("click", numberEqual);
       numbers[i].removeAttribute("href");
     }
-    e.preventDefault();
   } else if (clicks <= 3 && random != e.target.innerText) {
     popup.style.display = "block";
     popup.innerHTML = "You lost. You should try again!" + popup.innerHTML;
@@ -32,7 +29,6 @@ function numberEqual(e) {
       numbers[i].removeEventListener("click", numberEqual);
       numbers[i].removeAttribute("href");
     }
-    e.preventDefault();
   }
 
   console.log(e.target.innerText);
